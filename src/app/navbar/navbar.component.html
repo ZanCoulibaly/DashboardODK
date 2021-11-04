@@ -1,0 +1,26 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+
+        <img src="assets/images/kalanso.jpeg" alt="" width="50px">
+
+        <mat-nav-list>
+            <b><a mat-list-item href="gestion" class="a">Gestion Users</a></b>
+            <b><a mat-list-item href="pointage" class="a">Pointage</a></b>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="tabar">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <span>GESTION KALANSO</span>
+        </mat-toolbar><br>
+        <!-- Add Content Here -->
+        <img src="assets/images/kalanso.jpeg" alt="" width="300px">
+        <marquee behavior="" direction="left">
+            <h2>Bienvenue sur notre Application <b style="color: orange;">Orange Kalanso</b></h2>
+        </marquee>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

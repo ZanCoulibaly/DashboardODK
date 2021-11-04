@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="loginData" (ngSubmit)="onSubmit()">
+            <img mat-card-sm-image src="assets/images/kalanso.jpeg" alt="kalanso">
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Email" formControlName="email" required>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="!loginData.valid" routerLink="/navbar">Connexion <mat-icon>arrow_right_alt</mat-icon></button>
+        </form>
+    </mat-card-content>
+</mat-card>

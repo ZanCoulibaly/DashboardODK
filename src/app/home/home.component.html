@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon>MENU</button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <div class="navclass">
+        <button mat-menu-item><b style="color: #F6D322;" routerLink="/formateur">Gestion Users</b> </button>
+        <button mat-menu-item><b style="color: #F6D322;"routerLink="#">Pointage</b></button></div>
+</mat-menu>

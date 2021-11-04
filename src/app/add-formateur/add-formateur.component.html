@@ -1,0 +1,51 @@
+<div class="my-container">
+    <form [formGroup]="options">
+        <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="floatLabelControl.value">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="entrez votre nom">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="entrez votre prenom">
+        </mat-form-field>
+        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="entrez votre e-mail">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+            <mat-label>Telephone</mat-label>
+            <input matInput placeholder="entrez votre numéro">
+        </mat-form-field>
+        <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="floatLabelControl.value">
+            <mat-label>Profile</mat-label>
+            <select matNativeControl [disabled]="disableSelect.value">
+              <option value="" selected></option>
+              <option value="Aucune" disabled>--None--</option>
+              <option value="Formateur">Formateur</option>
+              <option value="Apprenants">Apprenants</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="floatLabelControl.value">
+            <mat-label>Genre</mat-label>
+            <select matNativeControl [disabled]="disableSelect.value">
+              <option value="" selected></option>
+              <option value="Aucune" disabled>--None--</option>
+              <option value="Homme">Homme</option>
+              <option value="Femme">Femme</option>
+              <option value="Neutre">Neutre</option>
+            </select>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+            <mat-label>Login</mat-label>
+            <input matInput placeholder="entrez votre login">
+        </mat-form-field>
+        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="entrez votre password">
+        </mat-form-field>
+    </form>
+</div>
+<div>
+    <button mat-raised-button type="submit" color="primary">Valider</button>
+</div>
