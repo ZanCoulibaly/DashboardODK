@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-formateur',
@@ -8,18 +10,42 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 })
 export class AddFormateurComponent implements OnInit {
   options: FormGroup;
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto');
-  disableSelect = new FormControl(false);
+  postBody:any
 
-  constructor(fb: FormBuilder) {
-    this.options = fb.group({
-      hideRequired: this.hideRequiredControl,
-      floatLabel: this.floatLabelControl,
-    });
+  constructor(private fb: FormBuilder, private http:HttpClient, private router:Router) {
+    this.options=this.fb.group({
+      nom: ['', Validators.required],
+      prenom:['', Validators.required],
+      email:['', Validators.required],
+      telephone:['', Validators.required],
+      genre:['', Validators.required],
+      age:['', Validators.required],
+      dateCreation:['', Validators.required]
+    })
   }
 
   ngOnInit(): void {
+  }
+  addFormateur(){
+    this.postBody = {
+        "formateurNom": ""+this.options.value.nom,
+        "formateurPrenom": ""+this.options.value.prenom,
+        "formateurAge": ""+this.options.value.age,
+        "formateurGenre": ""+this.options.value.genre,
+        "formateurEmail": ""+this.options.value.email,
+        "formateurTelephone": ""+this.options.value.telephone,
+        "dateCreation": ""+this.options.value.dateCreation,
+        "listePresences": []
+    }
+    // console.log(this.postBody)
+    this.http.post("http://localhost:8080/api/addFormateur", this.postBody, {responseType:"text"}).subscribe(
+      result=>{
+        // console.log(result)
+        this.router.navigate(['gestion'])
+      }
+    )
+
+    this.options.reset()
   }
 
 }

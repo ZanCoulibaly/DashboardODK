@@ -1,11 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-
-        <img src="assets/images/kalanso.jpeg" alt="" width="50px">
-
+        <mat-toolbar class="b">Menu</mat-toolbar>
         <mat-nav-list>
             <b><a mat-list-item href="gestion" class="a">Gestion Users</a></b>
-            <b><a mat-list-item href="pointage" class="a">Pointage</a></b>
+            <b><a mat-list-item href="pointage" class="a">Pointage</a></b><br><br>
+            <a [routerLink]="['']"><button mat-raised-button color="warn">Deconnexion</button></a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -15,7 +14,6 @@
       </button>
             <span>GESTION KALANSO</span>
         </mat-toolbar><br>
-        <!-- Add Content Here -->
         <img src="assets/images/kalanso.jpeg" alt="" width="300px">
         <marquee behavior="" direction="left">
             <h2>Bienvenue sur notre Application <b style="color: orange;">Orange Kalanso</b></h2>

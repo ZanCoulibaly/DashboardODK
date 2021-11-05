@@ -1,23 +1,45 @@
-<div class="my-container">
-    <mat-form-field>
-        <button mat-raised-button color="primary" class="add"> AjouterUsers</button>
-    </mat-form-field>
-    <form>
-        <mat-form-field appearance="fill">
-            <label>Nom</label>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <label>Prenom</label>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <label>Email</label>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <label>Apprenant</label>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <button mat-raised-button color="primary">Modifier</button>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <button mat-raised-button color="warn">Supprimer</button>
-        </mat-form-field>
+<table>
+    <caption>Liste des apprenants</caption><br>
+    <button routerLink="/apprenant">Ajouter Apprenant</button>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Genre</th>
+        <th>Action</th>
+        <th>Suppression</th>
+    </tr>
+    <tr *ngFor="let app of apprenants">
+        <td>{{app.apprenantNom}}</td>
+        <td>{{app.apprenantPrenom}}</td>
+        <td>{{app.apprenantEmail}}</td>
+        <td>{{app.apprenantTelephone}}</td>
+        <td>{{app.apprenantGenre}}</td>
+        <td><button mat-raised-button color="primary">Modifier</button></td>
+        <td><button mat-raised-button color="warn" (click)="onClick(app.apprenantId)">Supprimer</button></td>
+    </tr>
+</table>
+
+<table>
+    <caption>Liste des formateurs</caption><br>
+    <button routerLink="/formateur">Ajouter Formateur</button>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Genre</th>
+        <th>Action</th>
+        <th>Suppression</th>
+    </tr>
+    <tr *ngFor="let forma of formateurs">
+        <td>{{forma.formateurNom}}</td>
+        <td>{{forma.formateurPrenom}}</td>
+        <td>{{forma.formateurEmail}}</td>
+        <td>{{forma.formateurTelephone}}</td>
+        <td>{{forma.formateurGenre}}</td>
+        <td><button mat-raised-button color="primary" size="small">Modifier</button></td>
+        <td><button mat-raised-button color="warn" (click)="supprimer(forma.formateurId)">Supprimer</button></td>
+    </tr>
+</table>

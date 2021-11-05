@@ -1,51 +1,43 @@
 <div class="my-container">
-    <form [formGroup]="options">
-        <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="floatLabelControl.value">
+    <h2>FORMATEUR</h2><br>
+    <form [formGroup]="options" (ngSubmit)="addFormateur()">
+        <mat-form-field appearance="fill">
             <mat-label>Nom</mat-label>
-            <input matInput placeholder="entrez votre nom">
+            <input matInput placeholder="entrez votre nom" formControlName="nom">
         </mat-form-field>
 
-        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+        <mat-form-field appearance="fill">
             <mat-label>Prenom</mat-label>
-            <input matInput placeholder="entrez votre prenom">
+            <input matInput placeholder="entrez votre prenom" formControlName="prenom">
         </mat-form-field>
-        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+        <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="entrez votre e-mail">
+            <input matInput placeholder="entrez votre e-mail" formControlName="email">
         </mat-form-field><br>
-        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+        <mat-form-field appearance="fill">
             <mat-label>Telephone</mat-label>
-            <input matInput placeholder="entrez votre numéro">
+            <span matPrefix>+223 &nbsp;</span>
+            <input type="number" matInput placeholder="entrez votre numéro" formControlName="telephone">
+            <mat-icon matSuffix>phone</mat-icon>
         </mat-form-field>
-        <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="floatLabelControl.value">
-            <mat-label>Profile</mat-label>
-            <select matNativeControl [disabled]="disableSelect.value">
-              <option value="" selected></option>
-              <option value="Aucune" disabled>--None--</option>
-              <option value="Formateur">Formateur</option>
-              <option value="Apprenants">Apprenants</option>
-            </select>
-        </mat-form-field>
-        <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="floatLabelControl.value">
+        <mat-form-field appearance="fill">
             <mat-label>Genre</mat-label>
-            <select matNativeControl [disabled]="disableSelect.value">
-              <option value="" selected></option>
-              <option value="Aucune" disabled>--None--</option>
+            <select matNativeControl formControlName="genre">
               <option value="Homme">Homme</option>
               <option value="Femme">Femme</option>
-              <option value="Neutre">Neutre</option>
+              <option value="Aucune" disabled>--None--</option>
             </select>
         </mat-form-field><br>
-        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-            <mat-label>Login</mat-label>
-            <input matInput placeholder="entrez votre login">
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" placeholder="entrez votre âge" formControlName="age">
         </mat-form-field>
-        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="entrez votre password">
+        <mat-form-field appearance="fill">
+            <mat-label>Date création</mat-label>
+            <input matInput type="date" formControlName="dateCreation">
         </mat-form-field>
+        <div>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!options.valid">Valider</button>
+        </div>
     </form>
-</div>
-<div>
-    <button mat-raised-button type="submit" color="primary">Valider</button>
 </div>

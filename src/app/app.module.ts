@@ -16,7 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { HomeComponent } from './home/home.component';
 import { GestionUsersComponent } from './gestion-users/gestion-users.component';
 import { ModulePointageComponent } from './module-pointage/module-pointage.component';
 import { AddFormateurComponent } from './add-formateur/add-formateur.component';
@@ -25,16 +24,22 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { AddApprenantComponent } from './add-apprenant/add-apprenant.component';
+import { ModifApprenantComponent } from './modif-apprenant/modif-apprenant.component';
+import { ModifFormateurComponent } from './modif-formateur/modif-formateur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     GestionUsersComponent,
     ModulePointageComponent,
     AddFormateurComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddApprenantComponent,
+    ModifApprenantComponent,
+    ModifFormateurComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     MatSidenavModule,
     LayoutModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
 
 
   ],
