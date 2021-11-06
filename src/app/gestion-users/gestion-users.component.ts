@@ -25,7 +25,13 @@ export class GestionUsersComponent implements OnInit {
         }
       );
      }
-
+     async supprimer(id:any){
+      await this.http.delete("http://localhost:8080/api/deleteFormateur/"+id, {responseType: 'text'}).subscribe(
+         data=>{
+           console.log(data)
+         }
+       )
+     }
   ngOnInit(): void {
   }
   onClick(id: any){
@@ -35,11 +41,5 @@ export class GestionUsersComponent implements OnInit {
       }
     )
   }
-  supprimer(id:any){
-    this.http.delete("http://localhost:8080/api/deleteFormateur/"+id).subscribe(
-      data=>{
-        console.log(data)
-      }
-    )
-  }
+
 }

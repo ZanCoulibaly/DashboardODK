@@ -1,5 +1,7 @@
 <div class="my-container">
-    <h2>APPRENANT</h2><br>
+    <mat-toolbar>
+        <h2>AJOUTER APPRENANT</h2>
+    </mat-toolbar><br>
     <form [formGroup]="options" (ngSubmit)="addApprenant()">
         <mat-form-field appearance="fill">
             <mat-label>Nom</mat-label>
@@ -47,7 +49,7 @@
           <option value="activer">activer</option>
           <option value="desactiver">desactiver</option>
         </select>
-        </mat-form-field>
+        </mat-form-field><br>
         <mat-form-field appearance="fill">
             <mat-label>DateCreation</mat-label>
             <input matInput type="date" formControlName="dateCreation">

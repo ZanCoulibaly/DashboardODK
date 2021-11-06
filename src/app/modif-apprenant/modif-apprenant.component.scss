@@ -1,0 +1,27 @@
+.my-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.my-container .mat-form-field {
+    width: 220px;
+}
+
+.example-container form {
+    margin-bottom: 20px;
+}
+
+.my-container form>* {
+    margin: 5px 0;
+}
+
+mat-toolbar {
+    background: orange;
+    color: white;
+    font-size: 1.7em;
+}
+
+footer {
+    background: #474247;
+    color: rgb(255, 166, 0);
+    font-size: 1.3em;
+}

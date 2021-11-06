@@ -1,1 +1,70 @@
-<p>modif-apprenant works!</p>
+<div class="my-container">
+    <mat-toolbar>
+        <h2>MODIFIER APPRENANT</h2>
+    </mat-toolbar><br>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="entrez votre nom">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="entrez votre prenom">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="entrez votre e-mail" type="mail">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+223 &nbsp;</span>
+            <input type="number" matInput placeholder="entrez votre numéro">
+            <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Genre</mat-label>
+            <select matNativeControl>
+          <option value="Aucune" disabled>--None--</option>
+          <option value="Homme">Homme</option>
+          <option value="Femme">Femme</option>
+        </select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Login</mat-label>
+            <input matInput placeholder="entrez votre login">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="entrez votre password">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" placeholder="entrez votre age">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <select matNativeControl>
+        <option value="Aucune" disabled>--None--</option>
+        <option value="activer">activer</option>
+        <option value="desactiver">desactiver</option>
+      </select>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>DateCreation</mat-label>
+            <input matInput type="date">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>DateModification</mat-label>
+            <input matInput type="date">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button type="submit" color="primary">Valider</button>
+        </div>
+    </form>
+</div> <br> <br> <br> <br>
+<div>
+    <footer>
+        <marquee behavior="" direction="left"> Orange Digital Center Kalanso Copy @ 2021 by Tieckby and Zan</marquee>
+    </footer>
+</div>

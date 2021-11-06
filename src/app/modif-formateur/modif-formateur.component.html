@@ -1,1 +1,45 @@
-<p>modif-formateur works!</p>
+<div class="my-container">
+    <mat-toolbar>
+        <h2>MODIFIER FORMATEUR</h2>
+    </mat-toolbar> <br>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="entrez votre nom">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="entrez votre prenom">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="entrez votre e-mail">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+223 &nbsp;</span>
+            <input type="number" matInput placeholder="entrez votre numéro">
+            <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Genre</mat-label>
+            <select matNativeControl>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+            <option value="Aucune" disabled>--None--</option>
+          </select>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" placeholder="entrez votre âge">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Date création</mat-label>
+            <input matInput type="date">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button type="submit" color="primary">Valider</button>
+        </div>
+    </form>
+</div>
