@@ -20,8 +20,6 @@ export class AddApprenantComponent implements OnInit {
       telephone:['', Validators.required],
       genre:['', Validators.required],
       age:['', Validators.required],
-      dateCreation:['', Validators.required],
-      dateModification:['', Validators.required],
       status:['', Validators.required],
       login:['', Validators.required],
       password:['', Validators.required]
@@ -41,8 +39,6 @@ export class AddApprenantComponent implements OnInit {
         "apprenantStatus": ""+this.options.value.status,
         "apprenantPassword": ""+this.options.value.password,
         "apprenantTelephone": ""+this.options.value.telephone,
-        "dateCreation": ""+this.options.value.dateCreation,
-        "dateModification": ""+this.options.value.dateModification,
         "listePresences": []
     }
     // console.log(this.postBody)

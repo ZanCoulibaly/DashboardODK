@@ -16,8 +16,8 @@
         <td>{{app.apprenantEmail}}</td>
         <td>{{app.apprenantTelephone}}</td>
         <td>{{app.apprenantGenre}}</td>
-        <td><button mat-raised-button color="primary" routerLink="/modifApprenant">Modifier</button></td>
-        <td><button mat-raised-button color="warn" (click)="onClick(app.apprenantId)">Supprimer</button></td>
+        <td><button mat-raised-button color="primary" (click)="goToModifyApprenants(app.apprenantId)">Modifier</button></td>
+        <td><button mat-raised-button color="warn" (click)="deleteApprenant(app.apprenantId)">Supprimer</button></td>
     </tr>
 </table>
 
@@ -39,7 +39,7 @@
         <td>{{forma.formateurEmail}}</td>
         <td>{{forma.formateurTelephone}}</td>
         <td>{{forma.formateurGenre}}</td>
-        <td><button mat-raised-button color="primary" routerLink="/modifFormation">Modifier</button></td>
-        <td><button mat-raised-button color="warn" (click)="supprimer(forma.formateurId)">Supprimer</button></td>
+        <td><button mat-raised-button color="primary" (click)="goToModifyFormateurs(forma.formateurId)">Modifier</button></td>
+        <td><button mat-raised-button color="warn" (click)="deleteFormateur(forma.formateurId)">Supprimer</button></td>
     </tr>
 </table>

@@ -1,30 +1,30 @@
 <div class="my-container">
     <mat-toolbar>
         <h2>MODIFIER FORMATEUR</h2>
-    </mat-toolbar> <br>
-    <form>
+    </mat-toolbar><br>
+    <form [formGroup]="options" (ngSubmit)="modifierFormateur()">
         <mat-form-field appearance="fill">
             <mat-label>Nom</mat-label>
-            <input matInput placeholder="entrez votre nom">
+            <input matInput placeholder="entrez votre nom" formControlName="nom" [(ngModel)]="formateur.formateurNom">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Prenom</mat-label>
-            <input matInput placeholder="entrez votre prenom">
+            <input matInput placeholder="entrez votre prenom" formControlName="prenom" [(ngModel)]="formateur.formateurPrenom">
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="entrez votre e-mail">
+            <input matInput placeholder="entrez votre e-mail" formControlName="email" [(ngModel)]="formateur.formateurEmail">
         </mat-form-field><br>
         <mat-form-field appearance="fill">
             <mat-label>Telephone</mat-label>
             <span matPrefix>+223 &nbsp;</span>
-            <input type="number" matInput placeholder="entrez votre numéro">
+            <input type="number" matInput placeholder="entrez votre numéro" formControlName="telephone" [(ngModel)]="formateur.formateurTelephone">
             <mat-icon matSuffix>phone</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Genre</mat-label>
-            <select matNativeControl>
+            <select matNativeControl formControlName="genre" [(ngModel)]="formateur.formateurGenre">
             <option value="Homme">Homme</option>
             <option value="Femme">Femme</option>
             <option value="Aucune" disabled>--None--</option>
@@ -32,14 +32,10 @@
         </mat-form-field><br>
         <mat-form-field appearance="fill">
             <mat-label>Age</mat-label>
-            <input matInput type="number" placeholder="entrez votre âge">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Date création</mat-label>
-            <input matInput type="date">
+            <input matInput type="number" placeholder="entrez votre âge" formControlName="age" [(ngModel)]="formateur.formateurAge">
         </mat-form-field>
         <div>
-            <button mat-raised-button type="submit" color="primary">Valider</button>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!options.valid">Valider</button>
         </div>
     </form>
 </div>
