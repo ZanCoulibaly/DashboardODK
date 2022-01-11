@@ -10,4 +10,4 @@ Il doit pouvoir aussi nous fournir la liste de présence avec (date, heure_arriv
 En tenant compte que nous travaillons sous mode Agile,le système peut évoluer au fur du temps avec plus de fonctionnalité
 
 
-*** Technologies utilisées *** : Angular & Spring Boot
+***Technologies utilisées*** : Angular & Spring Boot
